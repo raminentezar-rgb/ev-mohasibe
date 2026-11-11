@@ -1,0 +1,12 @@
+{
+  "name": "اِو محاسبه (Ev Mohasibe) - حسابداری هوشمند خانه و شخصی",
+  "short_name": "Ev Mohasibe",
+  "description": "سیستم هوشمند مدیریت هزینه‌های روزانه و ماهانه خانواده و شخصی همراه با اسکنر فاکتور و دسته‌بندی خودکار",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#4f46e5",
+  "dir": "rtl",
+  "lang": "fa-IR"
+}
+
