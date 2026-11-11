@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ev-mohasibe-cache-v4';
+const CACHE_NAME = 'ev-mohasibe-cache-v5';
 
 self.addEventListener('install', () => {
   self.skipWaiting();
@@ -16,8 +16,16 @@ self.addEventListener('fetch', (event) => {
   const { request } = event;
   if (request.method !== 'GET') return;
 
-  // Never cache API calls or external Google API calls
-  if (request.url.includes('/api/') || request.url.includes('googleapis.com')) return;
+  // Never cache API calls, external Google APIs, Firebase, or GitHub API sync requests
+  if (
+    request.url.includes('/api/') ||
+    request.url.includes('googleapis.com') ||
+    request.url.includes('firebaseio.com') ||
+    request.url.includes('firebasedatabase.app') ||
+    request.url.includes('api.github.com')
+  ) {
+    return;
+  }
 
   event.respondWith(
     fetch(request)
